@@ -27,6 +27,7 @@ else(WIN32)
 		include
 		include/youbot_driver/soem/osal
 		include/youbot_driver/soem/oshw/linux
+
 	)
 endif(WIN32)
 
@@ -84,7 +85,7 @@ set(YOUBOT_DRIVER_SRC
   src/base-kinematic/FourSwedishWheelOmniBaseKinematicConfiguration.cpp
 )
 
-add_library(YouBotDriver ${YOUBOT_DRIVER_SRC})
+add_library(YouBotDriver ${YOUBOT_DRIVER_SRC} ${INCLUDE_DIRS})
 target_link_libraries(YouBotDriver soem ${Boost_LIBRARIES})
 
 
@@ -119,4 +120,3 @@ endif()
 #)
 
 #target_link_libraries(YouBot_test YouBotDriver)
-
